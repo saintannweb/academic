@@ -1,0 +1,156 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Announcements - Saint Ann College
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   /* Custom scrollbar for the notice board and announcements */
+    .scrollbar-thin::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .scrollbar-thin::-webkit-scrollbar-thumb {
+      background-color: #888;
+      border-radius: 3px;
+    }
+  </style>
+ </head>
+ <body class="bg-white font-sans text-[#222831]">
+  <header class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center border-b border-gray-300">
+   <h1 class="text-[#0f75bc] font-bold text-3xl select-none">
+    Saint Ann College
+   </h1>
+   <nav>
+    <ul class="flex space-x-6 text-[#0f75bc] text-sm font-semibold select-none">
+     <li>
+      <a class="hover:underline" href="index.html">
+       Home
+      </a>
+     </li>
+     <li>
+      <a class="hover:underline" href="about.html">
+       About
+      </a>
+     </li>
+     <li>
+      <a class="hover:underline" href="announcements.html">
+       Announcements
+      </a>
+     </li>
+     <li>
+      <a class="hover:underline" href="fee-structure.html">
+       Fee Structure
+      </a>
+     </li>
+     <li>
+      <a class="hover:underline" href="academic-calendar.html">
+       Academic Calendar
+      </a>
+     </li>
+     <li>
+      <a class="hover:underline" href="faculty.html">
+       Faculty
+      </a>
+     </li>
+    </ul>
+   </nav>
+  </header>
+  <main class="max-w-6xl mx-auto px-4 py-10">
+   <h2 class="text-[#0f75bc] font-bold text-2xl mb-6" style="font-size:16px;">
+    Announcements
+   </h2>
+   <div class="mb-6">
+    <input aria-label="Search announcements" class="w-full border border-gray-300 rounded-md px-3 py-3 text-[12pt] focus:outline-none focus:ring-2 focus:ring-[#0f75bc]" id="searchInput" placeholder="Search announcements..." type="text"/>
+   </div>
+   <div class="overflow-x-auto">
+    <table class="w-full border border-gray-300" style="font-size:12pt;">
+     <thead class="bg-[#0f75bc] text-white">
+      <tr>
+       <th class="border border-gray-300 px-3 py-3 text-left">
+        Announcement
+       </th>
+      </tr>
+     </thead>
+     <tbody id="announcementTableBody">
+      <tr class="even:bg-gray-100">
+       <td class="border border-gray-300 px-3 py-3">
+        1st Unit Test Results/PTM on 12th July 2025
+       </td>
+      </tr>
+      <tr class="even:bg-gray-100">
+       <td class="border border-gray-300 px-3 py-3">
+        PATRON’S DAY & INVESTITURE CEREMONY Celebration on 26th July 2025
+       </td>
+      </tr>
+      <tr class="even:bg-gray-100">
+       <td class="border border-gray-300 px-3 py-3">
+        CISCE Class X and Class XII Board Results Released.
+       </td>
+      </tr>
+      <tr class="even:bg-gray-100">
+       <td class="border border-gray-300 px-3 py-3">
+        Summer vacation announced from 18th May 2025 onwards.
+       </td>
+      </tr>
+      <tr class="even:bg-gray-100">
+       <td class="border border-gray-300 px-3 py-3">
+        Commencement of New Session - Welcome and Orientation sessions on April 2nd 2025.
+       </td>
+      </tr>
+      <tr class="even:bg-gray-100">
+       <td class="border border-gray-300 px-3 py-3">
+        Results Academic Year 2024-2025 announced.
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </div>
+  </main>
+  <footer class="bg-[#0f75bc] text-white py-6 mt-20">
+   <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-sm">
+    <p>
+     © 2025 Saint Ann College. All rights reserved.
+    </p>
+    <div class="flex space-x-6 mt-4 md:mt-0">
+     <a aria-label="Facebook" class="hover:underline" href="#">
+      <i class="fab fa-facebook-f">
+      </i>
+     </a>
+     <a aria-label="Twitter" class="hover:underline" href="#">
+      <i class="fab fa-twitter">
+      </i>
+     </a>
+     <a aria-label="Instagram" class="hover:underline" href="#">
+      <i class="fab fa-instagram">
+      </i>
+     </a>
+     <a aria-label="LinkedIn" class="hover:underline" href="#">
+      <i class="fab fa-linkedin-in">
+      </i>
+     </a>
+    </div>
+   </div>
+  </footer>
+  <script>
+   const searchInput = document.getElementById('searchInput');
+   const tableBody = document.getElementById('announcementTableBody');
+
+   searchInput.addEventListener('input', () => {
+    const filter = searchInput.value.toLowerCase();
+    const rows = tableBody.getElementsByTagName('tr');
+    for (let i = 0; i < rows.length; i++) {
+      const td = rows[i].getElementsByTagName('td')[0];
+      if (td) {
+        const textValue = td.textContent || td.innerText;
+        rows[i].style.display = textValue.toLowerCase().indexOf(filter) > -1 ? '' : 'none';
+      }
+    }
+   });
+  </script>
+ </body>
+</html>

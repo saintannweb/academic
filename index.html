@@ -1,0 +1,304 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Saint Ann College</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    /* Custom scrollbar for the notice board and announcements */
+    .scrollbar-thin::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .scrollbar-thin::-webkit-scrollbar-thumb {
+      background-color: #888;
+      border-radius: 3px;
+    }
+    /* Animation for vertical scrolling */
+    @keyframes scrollUp {
+      0% {
+        transform: translateY(100%);
+      }
+      100% {
+        transform: translateY(-100%);
+      }
+    }
+    .scrolling-content {
+      display: inline-block;
+      animation: scrollUp 40s linear infinite;
+      white-space: normal; /* allow wrapping */
+    }
+    .scrolling-wrapper {
+      overflow: hidden;
+      height: 160px;
+      position: relative;
+      width: 100%;
+    }
+    /* Ensure both tables have equal width */
+    .equal-width {
+      width: 48%;
+      min-width: 300px;
+    }
+  </style>
+ </head>
+ <body class="bg-white font-sans text-[#222831] text-[11pt]">
+  <nav
+    class="flex justify-between items-center px-4 py-2 text-[#0f75bc] select-none max-w-7xl mx-auto text-[11pt]"
+  >
+    <ul class="flex space-x-2 items-center font-semibold">
+      <li><a href="about.html" class="hover:underline">About</a></li>
+      <li><a href="announcements.html" class="hover:underline">Announcements</a></li>
+      <li><a href="fee-structure.html" class="hover:underline">Fee Structure</a></li>
+      <li><a href="academic-calendar.html" class="hover:underline">Academic Calendar</a></li>
+      <li><a href="faculty.html" class="hover:underline">Faculty</a></li>
+    </ul>
+    <div
+      class="font-bold select-none text-[#0f75bc] text-[22pt] cursor-pointer"
+      id="homeTitle"
+    >
+      Saint Ann College
+    </div>
+  </nav>
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="relative w-full h-[250px] overflow-hidden rounded-md">
+      <img
+        alt="Campus image 1: Panoramic view of college buildings with greenery and blue sky"
+        class="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000"
+        id="slide1"
+        src="C:\Users\lenovo\OneDrive\Desktop\saintannweb\Untitled design.png"
+      />
+      <img
+        alt="Campus image 2: College building with trees and clear sky"
+        class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000"
+        id="slide2"
+        src="C:\Users\lenovo\OneDrive\Desktop\saintannweb\banner2.png"
+      />
+      <img
+        alt="Campus image 3: College campus aerial view with greenery"
+        class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000"
+        id="slide3"
+        src="C:\Users\lenovo\OneDrive\Desktop\saintannweb\Untitled design.png"
+      />
+    </div>
+  </div>
+  <main class="max-w-7xl mx-auto px-4 mt-6">
+    <section
+      class="flex justify-center space-x-3 mb-6 max-w-5xl mx-auto"
+    >
+      <a
+        href="about.html"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex flex-col items-center bg-[#0f75bc] rounded-lg p-4 w-32 min-w-[128px] cursor-pointer hover:bg-[#0a4e7a] transition-colors"
+      >
+        <span class="text-[11pt] font-bold text-white mb-1">About</span>
+        <div class="bg-[#0f75bc] p-4 rounded-lg text-white">
+          <i class="fas fa-info-circle text-2xl"></i>
+        </div>
+      </a>
+      <a
+        href="announcements.html"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex flex-col items-center bg-[#d1d5db] rounded-lg p-4 w-32 min-w-[128px] cursor-pointer hover:bg-[#7f8a94] transition-colors"
+      >
+        <span class="text-[11pt] font-bold text-[#374151] mb-1">Announcements</span>
+        <div class="bg-[#9ca3af] p-4 rounded-lg text-white">
+          <i class="fas fa-newspaper text-2xl"></i>
+        </div>
+      </a>
+      <a
+        href="fee-structure.html"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex flex-col items-center bg-[#0f75bc] rounded-lg p-4 w-32 min-w-[128px] cursor-pointer hover:bg-[#0a4e7a] transition-colors"
+      >
+        <span class="text-[11pt] font-bold text-white mb-1">Fee Structure</span>
+        <div class="bg-[#0f75bc] p-4 rounded-lg text-white">
+          <i class="fas fa-file-invoice-dollar text-2xl"></i>
+        </div>
+      </a>
+      <a
+        href="academic-calendar.html"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex flex-col items-center bg-[#d1d5db] rounded-lg p-4 w-32 min-w-[128px] cursor-pointer hover:bg-[#7f8a94] transition-colors"
+      >
+        <span class="text-[11pt] font-bold text-[#374151] mb-1">Academic Calendar</span>
+        <div class="bg-[#9ca3af] p-4 rounded-lg text-white">
+          <i class="fas fa-calendar-alt text-2xl"></i>
+        </div>
+      </a>
+      <a
+        href="faculty.html"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex flex-col items-center bg-[#0f75bc] rounded-lg p-4 w-32 min-w-[128px] cursor-pointer hover:bg-[#0a4e7a] transition-colors"
+      >
+        <span class="text-[11pt] font-bold text-white mb-1">Faculty</span>
+        <div class="bg-[#0f75bc] p-4 rounded-lg text-white">
+          <i class="fas fa-chalkboard-teacher text-2xl"></i>
+        </div>
+      </a>
+    </section>
+    <section class="max-w-4xl mx-auto text-[#222831] mb-6">
+      <p>
+        <span class="text-[#0f75bc] font-bold text-[13pt]">About Saint Ann College</span><br />
+        Saint Ann College is an unaided Minority Educational English Medium College (F.No. 87 of 2007 / 22195) established and administered by the Catholic Diocese of Lucknow, a registered society. The college was founded in 1989. It was established with the objective of imparting modern education to
+        Catholic students in a manner that will conserve their religion, language and culture, but admission is not denied to students professing other faiths.
+        The College is named after St. Ann, Mother of Mary. Her maternal care and blessings we seek from Heaven.
+      </p>
+    </section>
+    <section class="max-w-4xl mx-auto flex flex-col space-y-4 mb-6">
+      <div class="flex justify-end">
+        <button
+          class="bg-[#0f75bc] text-white text-[10pt] px-4 py-1 rounded-md font-bold select-none"
+          id="knowMoreBtn"
+        >
+          KNOW MORE
+        </button>
+      </div>
+      <div class="flex space-x-6">
+        <div class="flex-shrink-0">
+          <img
+            alt="Portrait photo of a smiling middle-aged man with glasses and mustache, wearing a light blue shirt"
+            class="rounded-md"
+            height="100"
+            src="C:\Users\lenovo\OneDrive\Desktop\saintannweb\Portrait.png"
+            width="100"
+          />
+        </div>
+        <div class="flex-1 text-[#222831]">
+          <p class="font-bold mb-1 text-[11pt]">Principal’s Message</p>
+          <p class="text-[#0f75bc] mb-2 text-[11pt]">
+            Follow No One, but Learn from Everyone and Acknowledge it Too!
+          </p>
+          <p class="font-bold text-[9pt]">FR. George Rodrigues</p>
+          <p class="text-[9pt]">Principal, Saint Ann College</p>
+         </div>
+      </div>
+      <div class="max-w-4xl mx-auto flex space-x-6 text-[10pt] text-[#222831]">
+        <div
+          class="equal-width flex-1 border border-gray-300 rounded-md shadow-sm bg-white"
+        >
+          <div
+            class="bg-[#0f75bc] text-white font-bold rounded-t-md px-2 py-1 text-center select-none"
+          >
+            Students' Notice Board
+          </div>
+          <div
+            class="scrolling-wrapper px-2 py-1 leading-tight max-h-40 overflow-hidden relative"
+          >
+            <div class="scrolling-content">
+              <ul class="list-disc list-inside space-y-1">
+                <li>1st Unit Test Results/PTM on 12th July 2025</li>
+                <li>2nd PTM Scheduled on 19th August 2025</li>
+                <li>Commencement of Half Yearly Examinations from 8th September 2025</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div
+          class="equal-width flex-1 border border-gray-300 rounded-md shadow-sm bg-white"
+        >
+          <div
+            class="bg-[#0f75bc] text-white font-bold rounded-t-md px-2 py-1 text-center select-none"
+          >
+            Upcoming Events
+          </div>
+          <div
+            class="scrolling-wrapper px-2 py-1 leading-tight max-h-40 overflow-hidden relative"
+          >
+            <div class="scrolling-content break-words">
+              <ul class="list-disc list-inside space-y-1">
+                <li>PATRON’S DAY & INVESTITURE CEREMONY Celebration on 26th July 2025</li>
+                <li>Independence Day Celebration on 15th August 2025</li>
+                <li>Teachers Day Celebration on 05th September 2025</li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      class="max-w-4xl mx-auto flex justify-center space-x-3 mb-12 text-[11pt]"
+    >
+      <div
+        class="bg-white border border-gray-300 rounded-md shadow-md w-20 text-center py-2"
+      >
+        <p class="font-semibold text-[#222831]">1000+</p>
+        <p class="text-[#222831]">Students</p>
+      </div>
+      <div
+        class="bg-white border border-gray-300 rounded-md shadow-md w-20 text-center py-2"
+      >
+        <p class="font-semibold text-[#222831]">40+</p>
+        <p class="text-[#222831]">Faculty</p>
+      </div>
+      <div
+        class="bg-white border border-gray-300 rounded-md shadow-md w-20 text-center py-2"
+      >
+        <p class="font-semibold text-[#222831]">20+</p>
+        <p class="text-[#222831]">Staff</p>
+      </div>
+      <div
+        class="bg-white border border-gray-300 rounded-md shadow-md w-20 text-center py-2"
+      >
+        <p class="font-semibold text-[#222831]">5000+</p>
+        <p class="text-[#222831]">Alumni</p>
+      </div>
+      <div
+        class="bg-white border border-gray-300 rounded-md shadow-md w-20 text-center py-2"
+      >
+        <p class="font-semibold text-[#222831]">5</p>
+        <p class="text-[#222831]">Buses</p>
+      </div>
+    </section>
+  </main>
+  <script>
+    const slides = [
+      document.getElementById("slide1"),
+      document.getElementById("slide2"),
+      document.getElementById("slide3"),
+    ];
+    let currentSlide = 0;
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.style.opacity = i === index ? "1" : "0";
+      });
+    }
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }, 5000);
+    showSlide(currentSlide);
+
+    // About section expand/collapse
+    const knowMoreBtn = document.getElementById("knowMoreBtn");
+    const aboutText = document.querySelector("section.max-w-4xl p");
+    let expanded = false;
+    knowMoreBtn.addEventListener("click", () => {
+      if (!expanded) {
+        aboutText.style.maxHeight = "1000px";
+        aboutText.innerHTML = `<span class="text-[#0f75bc] font-bold text-[13pt]">About Saint Ann College</span><br/>
+Saint Ann College is an unaided Minority Educational English Medium College (F.No. 87 of 2007 / 22195) established and administered by the Catholic Diocese of Lucknow, a registered society. The college was founded in 1989. It was established with the objective of imparting modern education to
+Catholic students in a manner that will conserve their religion, language and culture, but admission is not denied to students professing other faiths.
+The College is named after St. Ann, Mother of Mary. Her maternal care and blessings we seek from Heaven.
+`;
+        knowMoreBtn.textContent = "SHOW LESS";
+        expanded = true;
+      } else {
+        aboutText.style.maxHeight = "5.5rem";
+        aboutText.innerHTML = `<span class="text-[#0f75bc] font-bold text-[13pt]">About Saint Ann College</span><br/>
+Saint Ann College is an unaided Minority Educational English Medium College (F.No. 87 of 2007 / 22195) established and administered by the Catholic Diocese of Lucknow, a registered society. The college was founded in 1989.`;
+        knowMoreBtn.textContent = "KNOW MORE";
+        expanded = false;
+      }
+    });
+  </script>
+ </body>
+</html>
