@@ -1,0 +1,194 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Faculty - Saint Ann College</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    /* Custom scrollbar */
+    .scrollbar-thin::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .scrollbar-thin::-webkit-scrollbar-thumb {
+      background-color: #888;
+      border-radius: 3px;
+    }
+    /* Table header style */
+    thead th {
+      background-color: #0f75bc;
+      color: white;
+    }
+  </style>
+ </head>
+ <body class="bg-white font-sans text-[#222831] text-[11pt]">
+  <header
+    class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center border-b border-gray-300"
+  >
+    <h1 class="text-[#0f75bc] font-bold text-3xl select-none">
+      Saint Ann College
+    </h1>
+    <nav>
+      <ul
+        class="flex space-x-6 text-[#0f75bc] text-sm font-semibold select-none"
+      >
+        <li><a class="hover:underline" href="index.html">Home</a></li>
+        <li><a class="hover:underline" href="about.html">About</a></li>
+        <li>
+          <a class="hover:underline" href="announcements.html">Announcements</a>
+        </li>
+        <li>
+          <a class="hover:underline" href="fee-structure.html">Fee Structure</a>
+        </li>
+        <li>
+          <a class="hover:underline" href="academic-calendar.html"
+            >Academic Calendar</a
+          >
+        </li>
+        <li><a class="hover:underline" href="faculty.html">Faculty</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="max-w-6xl mx-auto px-4 py-10">
+    <h2 class="text-[#0f75bc] font-bold text-2xl mb-6">Faculty</h2>
+    <div class="mb-6 max-w-sm">
+      <label
+        for="sectionSelect"
+        class="block mb-2 font-semibold text-sm text-[#0f75bc]"
+        >Select Section</label
+      >
+      <select
+        id="sectionSelect"
+        class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#0f75bc]"
+      >
+        <option value="" disabled selected>-- Choose a section --</option>
+        <option value="primary">Primary</option>
+        <option value="junior">Junior</option>
+        <option value="senior">Senior</option>
+      </select>
+    </div>
+
+    <div id="facultyContainer" class="overflow-x-auto max-w-4xl">
+      <!-- Table will be rendered here -->
+    </div>
+  </main>
+  <footer class="bg-[#0f75bc] text-white py-6 mt-20">
+    <div
+      class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-sm"
+    >
+      <p>© 2024 Saint Ann College. All rights reserved.</p>
+      <div class="flex space-x-6 mt-4 md:mt-0">
+        <a aria-label="Facebook" class="hover:underline" href="#"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a aria-label="Twitter" class="hover:underline" href="#"
+          ><i class="fab fa-twitter"></i
+        ></a>
+        <a aria-label="Instagram" class="hover:underline" href="#"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a aria-label="LinkedIn" class="hover:underline" href="#"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const facultyData = {
+      primary: [
+        { name: "Mrs. Anjali Sharma", class: "Class 1", ct: true },
+        { name: "Mr. Rajesh Kumar", class: "Class 2", ct: true },
+        { name: "Ms. Neha Singh", class: "Class 3", ct: false },
+        { name: "Mr. Amit Patel", class: "Class 4", ct: false },
+      ],
+      junior: [
+        { name: "Mrs. Kavita Joshi", class: "Class 5", ct: true },
+        { name: "Mr. Suresh Rao", class: "Class 6", ct: true },
+        { name: "Ms. Priya Nair", class: "Class 7", ct: false },
+        { name: "Mr. Anil Mehta", class: "Class 8", ct: false },
+      ],
+      senior: [
+        { name: "Dr. Shreepad Karmalkar", subject: "Physics", experience: 20 },
+        { name: "Prof. Anjali Mehta", subject: "Mathematics", experience: 18 },
+        { name: "Dr. Rajesh Kumar", subject: "Chemistry", experience: 15 },
+        { name: "Prof. Meera Singh", subject: "Biology", experience: 12 },
+        { name: "Mr. Amit Patel", subject: "Computer Science", experience: 8 },
+      ],
+    };
+
+    const sectionSelect = document.getElementById("sectionSelect");
+    const facultyContainer = document.getElementById("facultyContainer");
+
+    function renderPrimaryJuniorTable(section) {
+      const data = facultyData[section];
+      let html = `
+        <table class="w-full border border-gray-300 text-[11pt]">
+          <thead>
+            <tr>
+              <th class="border border-gray-300 px-3 py-2 text-left">Faculty Name</th>
+              <th class="border border-gray-300 px-3 py-2 text-left">Teaching Class</th>
+              <th class="border border-gray-300 px-3 py-2 text-center">CT</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+      data.forEach((f) => {
+        html += `
+          <tr class="even:bg-gray-100">
+            <td class="border border-gray-300 px-3 py-2">${f.name}</td>
+            <td class="border border-gray-300 px-3 py-2">${f.class}</td>
+            <td class="border border-gray-300 px-3 py-2 text-center">${
+              f.ct ? "CT" : ""
+            }</td>
+          </tr>
+        `;
+      });
+      html += "</tbody></table>";
+      facultyContainer.innerHTML = html;
+    }
+
+    function renderSeniorTable() {
+      const data = [...facultyData.senior];
+      // Sort by experience descending
+      data.sort((a, b) => b.experience - a.experience);
+      let html = `
+        <table class="w-full border border-gray-300 text-[11pt]">
+          <thead>
+            <tr>
+              <th class="border border-gray-300 px-3 py-2 text-left">Faculty Name</th>
+              <th class="border border-gray-300 px-3 py-2 text-left">Subject</th>
+              <th class="border border-gray-300 px-3 py-2 text-left">Experience (Years)</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+      data.forEach((f) => {
+        html += `
+          <tr class="even:bg-gray-100">
+            <td class="border border-gray-300 px-3 py-2">${f.name}</td>
+            <td class="border border-gray-300 px-3 py-2">${f.subject}</td>
+            <td class="border border-gray-300 px-3 py-2">${f.experience}</td>
+          </tr>
+        `;
+      });
+      html += "</tbody></table>";
+      facultyContainer.innerHTML = html;
+    }
+
+    sectionSelect.addEventListener("change", (e) => {
+      const section = e.target.value;
+      if (section === "primary" || section === "junior") {
+        renderPrimaryJuniorTable(section);
+      } else if (section === "senior") {
+        renderSeniorTable();
+      } else {
+        facultyContainer.innerHTML = "";
+      }
+    });
+  </script>
+ </body>
+</html>
